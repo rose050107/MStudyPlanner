@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<tabs>
+    <tab
+        id="@+id/tab_cal"
+        icon="@drawable/bank"
+        title="달력"/>
+    <tab
+        id="@+id/tab_study"
+        icon="@drawable/pencil"
+        title="공부"/>
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/home"
+        title="메인"/>
+    <tab
+        id="@+id/tab_check"
+        icon="@drawable/check"
+        title="과목"/>
+    <tab
+        id="@+id/tab_mypage"
+        icon="@drawable/my"
+        title="마이페이지"/>
+
+</tabs>
+</PreferenceScreen>

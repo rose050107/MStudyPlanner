@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gmail.mstudyplanner">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".study_input" />
+        <activity android:name=".MyPageActivity" />
+        <activity android:name=".Tab" />
+        <activity android:name=".Main_calendar" />
+        <activity android:name=".Main_study" />
+        <activity android:name=".Subject_input" />
+        <activity android:name=".Main_subject" />
+        <activity android:name=".Wisdom_input" />
+        <activity android:name=".Dday_list" />
+        <activity android:name=".DdayInputActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DdayInputActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:text="뒤로"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/DdayPlus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="D-day 추가"
+            android:textSize="40dp"/>
+
+    </LinearLayout>
+
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="제목명"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/namein"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="제목명을 입력해주세요."
+        android:textSize="20dp"/>"
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="날짜"
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/datein"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/cal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="달력" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ddayadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="추가"
+        android:textSize="30dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

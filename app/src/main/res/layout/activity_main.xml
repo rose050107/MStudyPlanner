@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/DDay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:gravity="center_vertical"
+        android:text="D-Day를 추가해주세요."
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/today"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/study"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text = "00:00"/>
+
+    // 공백
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"/>
+
+    // 공백
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/Wisdom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:text="명언/의지를 입력해주세요."
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_margin="5sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:src="@drawable/calendar"
+                android:id="@+id/pagecalendar"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:src="@drawable/pencil"
+                android:id="@+id/pagepencil"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:src="@drawable/home"
+                android:id="@+id/pagehome"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:src="@drawable/check"
+                android:id="@+id/pagecheck"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:src="@drawable/my"
+                android:id="@+id/pagemy"/>
+        </LinearLayout>
+
+</LinearLayout>
