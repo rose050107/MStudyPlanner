@@ -1,0 +1,81 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.gmail.mstudyplanner"
+4    android:versionCode="3"
+5    android:versionName="3.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:5:22-64
+12
+13    <application
+13-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:7:5-32:19
+14        android:allowBackup="true"
+14-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:8:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.0.1] C:\Users\USER\.gradle\caches\transforms-2\files-2.1\46da25c3e2ae6308b2227b660caa604d\core-1.0.1\AndroidManifest.xml:22:18-86
+16        android:icon="@drawable/ic_mstudy"
+16-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:9:9-43
+17        android:label="@string/app_name"
+17-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:10:9-41
+18        android:roundIcon="@drawable/ic_mstudy"
+18-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:11:9-48
+19        android:supportsRtl="true"
+19-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:12:9-35
+20        android:theme="@style/AppTheme"
+20-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:13:9-40
+21        android:usesCleartextTraffic="true" >
+21-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:14:9-44
+22        <activity android:name="com.gmail.mstudyplanner.RegisterActivity" />
+22-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:15:9-54
+22-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:15:19-51
+23        <activity android:name="com.gmail.mstudyplanner.LoginActivity" />
+23-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:16:9-51
+23-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:16:19-48
+24        <activity android:name="com.gmail.mstudyplanner.MyPageActivity" />
+24-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:17:9-52
+24-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:17:19-49
+25        <activity android:name="com.gmail.mstudyplanner.Main_calendar" />
+25-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:18:9-51
+25-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:18:19-48
+26        <activity android:name="com.gmail.mstudyplanner.Main_study" />
+26-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:19:9-48
+26-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:19:19-45
+27        <activity android:name="com.gmail.mstudyplanner.Subject_input" />
+27-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:20:9-51
+27-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:20:19-48
+28        <activity android:name="com.gmail.mstudyplanner.Main_subject" />
+28-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:21:9-50
+28-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:21:19-47
+29        <activity android:name="com.gmail.mstudyplanner.Wisdom_input" />
+29-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:22:9-50
+29-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:22:19-47
+30        <activity android:name="com.gmail.mstudyplanner.Dday_list" />
+30-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:23:9-47
+30-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:23:19-44
+31        <activity android:name="com.gmail.mstudyplanner.DdayInputActivity" />
+31-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:24:9-55
+31-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:24:19-52
+32        <activity android:name="com.gmail.mstudyplanner.MainActivity" >
+32-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:25:9-31:20
+32-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:25:19-47
+33            <intent-filter>
+33-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:26:13-30:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:27:17-69
+34-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:27:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:29:17-77
+36-->C:\prdProtfolio\mStudyPlanner\app\src\main\AndroidManifest.xml:29:27-74
+37            </intent-filter>
+38        </activity>
+39    </application>
+40
+41</manifest>
