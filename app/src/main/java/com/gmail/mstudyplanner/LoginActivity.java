@@ -2,10 +2,14 @@ package com.gmail.mstudyplanner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -53,16 +57,32 @@ public class LoginActivity extends AppCompatActivity {
                 final Handler loginHandler = new Handler(){
                     @Override
                    public void handleMessage(Message msg){
-                       if(result != null && !result.equals("fail")){
+
+                       if(result != null && !result.trim().equals("fail")){
                            Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_LONG).show();
                            Session.id = idinput;
+
                            String [] ar = result.trim().split(",");
                            Session.name = ar[0].trim();
                            Session.category = ar[1].trim();
                            Session.school = ar[2].trim();
 
+                           DBHelper mHelper = new DBHelper(LoginActivity.this);
+                           SQLiteDatabase db = mHelper.getWritableDatabase();
+
+                           ContentValues row = new ContentValues();
+                           row.put("id", Session.id);
+                           row.put("name", Session.name);
+                           row.put("school", Session.school);
+                           row.put("category", Session.category);
+
+                           db.insert("member", null, row);
+
+                           mHelper.close();
+
                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                           // 로그인 화면이 2번 안만들어지게 함
                            startActivity(intent);
                        }else{
                            Toast.makeText(LoginActivity.this, "없는 아이디이거나 틀린 비밀번호입니다.", Toast.LENGTH_LONG).show();
@@ -75,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void run(){
                         StringBuilder html = new StringBuilder();
                         try {
-                            String addr = "http://172.30.1.16:9080/StudyPlanner/login.jsp";
+                            String addr = Common.server + "/login.jsp?";
                             addr = addr +"id=" + idinput;
                             addr = addr + "&pw=" + pwinput;
 

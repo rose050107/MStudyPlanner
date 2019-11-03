@@ -7,29 +7,29 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/back"
             android:layout_width="0dp"
             android:layout_height="65dp"
             android:layout_weight="1"
-            android:padding="10dp"
-            android:text="뒤로"
-            android:textSize="20dp" />
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/left" />
 
         <TextView
             android:id="@+id/wisdomPlus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Wisdom"
-            android:textSize="40dp"/>
-
+            android:layout_weight="5"
+            android:layout_gravity="center"
+            android:text="명언 / 의지 추가"
+            android:textSize="30dp" />
     </LinearLayout>
-
 
     // 공백
     <Space
@@ -39,7 +39,7 @@
     <EditText
         android:id="@+id/comment"
         android:layout_width="match_parent"
-        android:layout_height="417dp"
+        android:layout_height="350dp"
         android:inputType="textMultiLine|textNoSuggestions"
         android:gravity="center"
         android:hint="내용을 입력하고 화면 상단을 누르면 키보드가 사라집니다."

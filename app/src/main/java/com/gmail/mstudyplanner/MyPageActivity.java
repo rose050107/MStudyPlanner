@@ -1,11 +1,13 @@
 package com.gmail.mstudyplanner;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +22,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 public class MyPageActivity extends AppCompatActivity {
 
@@ -45,7 +48,7 @@ public class MyPageActivity extends AppCompatActivity {
         if(Session.category.equals("고입")){
             radioButton1.setChecked(true);
         }else{
-            radioButton2.setChecked(false);
+            radioButton2.setChecked(true);
         }
 
         school.setText(Session.school);
@@ -94,10 +97,18 @@ public class MyPageActivity extends AppCompatActivity {
                     public void handleMessage(Message msg){
                         if(result != null && result.equals("success")){
                             Toast.makeText(MyPageActivity.this, "회원정보 수정 성공", Toast.LENGTH_LONG).show();
+                            DBHelper mHelper = new DBHelper(MyPageActivity.this);
+                            SQLiteDatabase db = mHelper.getWritableDatabase();
+                            String [] args={Session.id};
+                            db.delete("member", "id=?", args);
+
+                            mHelper.close();
+
                             Session.id=null;
                             Session.name = null;
                             Session.school=null;
                             Session.category=null;
+
                             Intent intent = new Intent(MyPageActivity.this, MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
@@ -112,19 +123,20 @@ public class MyPageActivity extends AppCompatActivity {
                     public void run(){
                         StringBuilder html = new StringBuilder();
                         try {
-                            String addr = "http://172.30.1.16:9080/StudyPlanner/memberupdate.jsp?";
+                            String addr = Common.server + "/memberupdate.jsp?";
                             addr = addr +"id=" + Session.id;
                             String n = name.getText().toString().trim();
-                            addr = addr +"&name=" + n;
+                            addr = addr +"&name=" + URLEncoder.encode(n, "utf-8");
+                            //Log.e("addr", addr);
 
                             String n3 = "고입";
                             if(radioButton1.isChecked() == false){
                                 n3 = "대입";
                             }
-                            addr = addr +"&category=" + n3;
+                            addr = addr +"&category=" + URLEncoder.encode(n3,"utf-8");
 
                             String n1 = school.getText().toString().trim();
-                            addr = addr +"&school=" + n1;
+                            addr = addr +"&school=" + URLEncoder.encode(n1,"utf-8");
 
                             URL url = new URL(addr);
                             HttpURLConnection conn =
@@ -160,12 +172,20 @@ public class MyPageActivity extends AppCompatActivity {
         logout = (Button)findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
+                DBHelper mHelper = new DBHelper(MyPageActivity.this);
+                SQLiteDatabase db = mHelper.getWritableDatabase();
+                String [] args={Session.id};
+                db.delete("member", "id=?", args);
+
+                mHelper.close();
                 Session.id=null;
                 Session.name = null;
                 Session.school=null;
                 Session.category=null;
+                Toast.makeText(MyPageActivity.this, "로그 아웃 하셨습니다.", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MyPageActivity.this, LoginActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
 

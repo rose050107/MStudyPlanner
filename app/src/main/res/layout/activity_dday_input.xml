@@ -8,25 +8,28 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/back"
+            android:src="@drawable/left"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="#00000000"
             android:layout_width="0dp"
             android:layout_height="65dp"
-            android:layout_weight="1"
-            android:text="뒤로"
-            android:textSize="20dp" />
+            android:layout_weight="1"/>
 
         <TextView
             android:id="@+id/DdayPlus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="4"
+            android:layout_gravity="center"
             android:text="D-day 추가"
-            android:textSize="40dp"/>
+            android:textSize="30dp"/>
 
     </LinearLayout>
 
@@ -65,14 +68,18 @@
             android:id="@+id/datein"
             android:layout_width="325dp"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="D-Day 일자를 입력해 주세요."
             android:textSize="20dp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/cal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="달력" />
+            android:src="@drawable/cal"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="#00000000"/>
 
     </LinearLayout>
 

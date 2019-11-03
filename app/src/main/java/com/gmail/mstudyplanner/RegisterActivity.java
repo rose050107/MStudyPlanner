@@ -16,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -58,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
                             StringBuilder html = new StringBuilder();
                             final String idinput = id.getText().toString().trim();
                             try {
-                                String addr = "http://172.30.1.16:9080/StudyPlanner/idcheck.jsp?";
+                                String addr = Common.server + "/idcheck.jsp?";
                                 addr = addr + "id=" + idinput;
 
                                 URL url = new URL(addr);
@@ -163,16 +164,16 @@ public class RegisterActivity extends AppCompatActivity {
                         StringBuilder html = new StringBuilder();
 
                         try {
-                            String addr = "http://172.30.1.16:9080/StudyPlanner/memberregister.jsp?";
-                            addr = addr + "name=" + nameinput;
+                            String addr = Common.server + "/memberregister.jsp?";
+                            addr = addr + "name=" + URLEncoder.encode(nameinput,"utf-8");
                             addr = addr + "&id=" + idinput;
                             addr = addr + "&pw=" + pwinput;
                             String categoryinput = "고입";
                             if(radioButton1.isChecked() == false) {
                                 categoryinput = "대입";
                             }
-                            addr = addr + "&category=" + categoryinput;
-                            addr = addr + "&school=" + schoolinput;
+                            addr = addr + "&category=" + URLEncoder.encode(categoryinput,"utf-8");
+                            addr = addr + "&school=" + URLEncoder.encode(schoolinput,"utf-8");
 
                             URL url = new URL(addr);
                             HttpURLConnection conn =

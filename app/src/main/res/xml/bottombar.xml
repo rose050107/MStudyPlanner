@@ -3,7 +3,7 @@
 <tabs>
     <tab
         id="@+id/tab_cal"
-        icon="@drawable/bank"
+        icon="@drawable/calendar"
         title="달력"/>
     <tab
         id="@+id/tab_study"

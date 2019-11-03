@@ -7,7 +7,6 @@
     tools:context=".Main_study"
     android:orientation="vertical">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -16,32 +15,38 @@
             android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="left"
             android:layout_weight="3"
-            android:text="오늘 하루"
-            android:textSize="30dp"
-            android:layout_gravity="left"/>
+            android:text="스터디 플랜"
+            android:textSize="25dp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/yesterday"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="앞"/>
+            android:src="@drawable/left"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:scaleType="fitCenter" />
 
         <TextView
             android:id="@+id/today"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_weight="3" />
+            android:layout_weight="3"
+            android:textSize="25dp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/tomorrow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="right"
-            android:text="뒤"/>
+            android:src="@drawable/right"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:scaleType="fitCenter"/>
 
     </LinearLayout>
 
@@ -62,12 +67,17 @@
                 android:id="@+id/add"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="추가하기"
+                android:text="공부시작"
                 android:textSize="20dp" />
-
-            <ListView
+            <Spinner
+                android:id="@+id/subject"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
@@ -285,7 +295,6 @@
                     android:id="@+id/t206">
                 </LinearLayout>
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1251,7 +1260,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:background="@drawable/customborder"
-                    android:id="@+id/t12605">
+                    android:id="@+id/t1605">
                 </LinearLayout>
 
                 <LinearLayout
@@ -1755,12 +1764,9 @@
 
             </LinearLayout>
 
-
-
         </LinearLayout>
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"

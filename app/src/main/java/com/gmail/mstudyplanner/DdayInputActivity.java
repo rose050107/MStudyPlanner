@@ -1,7 +1,6 @@
 package com.gmail.mstudyplanner;
 
 import android.app.DatePickerDialog;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,11 +18,12 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Calendar;
 
 public class DdayInputActivity extends AppCompatActivity {
 
-    Button back;
+    ImageButton back;
 
     TextView DdayPlus;
     TextView name;
@@ -31,7 +32,7 @@ public class DdayInputActivity extends AppCompatActivity {
     TextView date;
 
     EditText datein;
-    Button cal;
+    ImageButton cal;
     Button ddayadd;
 
     String result;
@@ -41,7 +42,7 @@ public class DdayInputActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dday_input);
 
-        back = (Button)findViewById(R.id.back);
+        back = (ImageButton)findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +60,7 @@ public class DdayInputActivity extends AppCompatActivity {
 
         datein = (EditText) findViewById(R.id.datein);
 
-        cal = (Button) findViewById(R.id.cal);
+        cal = (ImageButton) findViewById(R.id.cal);
         cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +72,7 @@ public class DdayInputActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                        datein.setText(year + "-" + (month+1) + "-" + dayOfMonth);
+                       // 월이 하나 적게 나옴
                     }
                     },year, month, day);
                 datePickerDialog.show();
@@ -108,9 +110,9 @@ public class DdayInputActivity extends AppCompatActivity {
                         StringBuilder html = new StringBuilder();
 
                         try {
-                            String addr = "http://172.30.1.16:9080/StudyPlanner/ddayregister.jsp?";
+                            String addr = Common.server+ "/ddayregister.jsp?";
                             addr = addr + "id=" + Session.id;
-                            addr = addr + "&title=" + namein.getText().toString();
+                            addr = addr + "&title=" + URLEncoder.encode(namein.getText().toString(), "utf-8");
                             addr = addr + "&ddaydate=" + date;
 
                             URL url = new URL(addr);

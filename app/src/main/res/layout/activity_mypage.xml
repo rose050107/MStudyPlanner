@@ -12,11 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="내 정보 수정"
-        android:textSize="40dp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:textSize="30dp" />
 
     <Button
         android:id="@+id/edit"
@@ -25,10 +21,6 @@
         android:layout_gravity="right"
         android:text="수정"
         android:textSize="20dp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -47,10 +39,6 @@
             android:textSize="20dp"/>
 
     </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -74,7 +62,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="25dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -113,7 +101,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="25sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -136,7 +124,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="25dp" />
 
     <Button
         android:id="@+id/logout"
