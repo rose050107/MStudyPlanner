@@ -1078,7 +1078,6 @@ id ALT
 id CTRL
 id DDay
 id DdayList
-id DdayListDel
 id DdayPlus
 id FUNCTION
 id META
@@ -1114,7 +1113,6 @@ id always
 id async
 id auto
 id back
-id backDel
 id barrier
 id bb_bottom_bar_appearance_id
 id bb_bottom_bar_background_overlay
@@ -1135,8 +1133,6 @@ id center
 id center_horizontal
 id center_vertical
 id chains
-id checkBox
-id checkBox2
 id checkbox
 id chronometer
 id clip_horizontal
@@ -1156,7 +1152,6 @@ id ddayadd
 id decor_content_parent
 id default_activity_button
 id delete
-id deleteDel
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1236,7 +1231,6 @@ id list
 id listMode
 id list_item
 id listview
-id listviewDel
 id login
 id logout
 id masked
@@ -1567,7 +1561,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_dday_del
 layout activity_dday_input
 layout activity_dday_list
 layout activity_login
